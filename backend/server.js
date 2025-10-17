@@ -52,3 +52,4 @@ app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
   console.log(`📝 API available at http://localhost:${PORT}/api`);
 });
+console.log("JWT Secret:", process.env.JWT_SECRET);

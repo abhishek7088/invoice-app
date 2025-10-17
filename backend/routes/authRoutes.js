@@ -1,23 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const pool = require('../config/database');
+const { login, register, getMe } = require('../controllers/authController');
+const { protect } = require('../middleware/authMiddleware');
 
-router.get('/users', async (req, res) => {
-  try {
-    const result = await pool.query('SELECT id, email, created_at FROM users');
-    
-    res.json({
-      success: true,
-      count: result.rows.length,
-      data: result.rows
-    });
-  } catch (error) {
-    console.error('Error fetching users:', error);
-    res.status(500).json({
-      success: false,
-      error: error.message
-    });
-  }
-});
+// Public routes
+router.post('/login', login);
+router.post('/register', register);
+
+// Protected route - requires token
+router.get('/me', protect, getMe);
 
 module.exports = router;
