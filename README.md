@@ -228,20 +228,20 @@ Password: password123
 ## 🎨 Screenshots
 
 ### Desktop View
-![Desktop View](Screenshots\DesktopView.png)
+![Desktop View](./Screenshots\DesktopView.png)
 ![Desktop View](Screenshots\ToggleView.png)
 
 ### Tablet View
-![Tablet View](Screenshots\TabView.png)
+![Tablet View](./Screenshots\TabView.png)
 
 ### Mobile View (Portrait)
-![Mobile Portrait](Screenshots\MobileView.png)
+![Mobile Portrait](./Screenshots\MobileView.png)
 
 ### Mobile View (Landscape)
-![Mobile Landscape](Screenshots\MobileLandscapeView.png)
+![Mobile Landscape](./Screenshots\MobileLandscapeView.png)
 
 ### LogIn View
-![LogIn View](screenshot/login-page.png)
+![LogIn View](./screenshot/login-page.png)
 
 ## 📱 Responsive Design
 
@@ -395,44 +395,44 @@ For support, email your.email@example.com or create an issue in the GitHub repos
 **Made with ❤️ for the SOW assessment**
 
 *Note: This is a demonstration project created for a Statement of Work (SOW) assessment.*
-# Dependencies
+## Dependencies
 node_modules/
 venv/
 __pycache__/
 
-# Environment variables
+## Environment variables
 .env
 .env.local
 .env.production
 
-# Build outputs
+## Build outputs
 dist/
 build/
 *.pyc
 
-# IDE
+## IDE
 .vscode/
 .idea/
 *.swp
 *.swo
 
-# OS
+## OS
 .DS_Store
 Thumbs.db
 *.log
 
-# Logs
+## Logs
 logs/
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Testing
+## Testing
 coverage/
 .nyc_output/
 
-# Misc
+## Misc
 .cache/
 temp/
 ```
