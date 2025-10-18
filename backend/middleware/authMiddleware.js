@@ -5,15 +5,15 @@ const jwt = require('jsonwebtoken');
 const protect = async (req, res, next) => {
   let token;
 
-  console.log("Authorization header:", req.headers.authorization); // 👈 debug
+  console.log("Authorization header:", req.headers.authorization); 
 
   if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
     token = req.headers.authorization.split(' ')[1];
-    console.log("Token extracted:", token); // 👈 debug
+    console.log("Token extracted:", token);
 
     try {
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
-      console.log("Decoded token payload:", decoded); // 👈 debug
+      console.log("Decoded token payload:", decoded);
 
       req.user = {
         id: decoded.id,

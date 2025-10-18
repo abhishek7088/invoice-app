@@ -1,0 +1,268 @@
+.pricelist-page {
+    background: white;
+    border-radius: 8px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+
+  .pricelist-toolbar {
+    padding: 15px 20px;
+    background: #fafafa;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .search-group {
+    display: flex;
+    gap: 10px;
+    flex: 0 0 auto;
+    min-width: auto;
+  }
+  
+  .search-box-inline {
+    position: relative;
+    flex: 0 0 200px; 
+  }
+  
+  .search-input-inline {
+    width: 100%;
+    padding: 10px 35px 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    background: white;
+  }
+  
+  .search-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #00bcd4;
+    font-size: 1.1rem;
+  }
+  
+  .action-buttons-inline {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .action-btn-inline {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+  
+  .new-product-btn {
+    background: #4caf50;
+    color: white;
+  }
+  
+  .new-product-btn:hover {
+    background: #45a049;
+  }
+  
+  .print-btn {
+    background: #00bcd4;
+    color: white;
+  }
+  
+  .print-btn:hover {
+    background: #0097a7;
+  }
+  
+  .advanced-btn {
+    background: #00bcd4;
+    color: white;
+  }
+  
+  .advanced-btn:hover {
+    background: #0097a7;
+  }
+  
+  .btn-icon {
+    font-size: 1.1rem;
+  }
+  
+  
+  .table-container {
+    overflow-x: auto;
+  }
+  
+  .products-table-main {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  
+  .products-table-main thead {
+    background: #f5f5f5;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  
+  .products-table-main th {
+    padding: 12px 10px;
+    text-align: left;
+    font-weight: 600;
+    color: #555;
+    border-bottom: 2px solid #e0e0e0;
+    white-space: nowrap;
+  }
+  
+  .products-table-main td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .products-table-main tbody tr:hover {
+    background: #f9f9f9;
+  }
+  
+  .sort-arrow {
+    color: #4caf50;
+    margin-left: 5px;
+    font-size: 0.9rem;
+  }
+  
+  
+  .col-select {
+    width: 40px;
+    text-align: center;
+  }
+  
+  .col-article {
+    width: 130px;
+  }
+  
+  .col-product {
+    min-width: 250px;
+  }
+  
+  .col-number {
+    width: 100px;
+  }
+  
+  .col-unit {
+    width: 140px;
+  }
+  
+  .col-description {
+    min-width: 300px;
+  }
+  
+  .col-actions {
+    width: 50px;
+    text-align: center;
+  }
+  
+  
+  .cell-input {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background: transparent;
+    font-size: 0.9rem;
+    font-family: inherit;
+    transition: all 0.2s ease;
+  }
+  
+  .cell-input:hover {
+    background: #f5f5f5;
+  }
+  
+  .cell-input:focus {
+    outline: none;
+    border-color: #2196f3;
+    background: white;
+    box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.1);
+  }
+  
+  .text-right {
+    text-align: right;
+  }
+  
+ 
+  .row-arrow {
+    color: #2196f3;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+ 
+  .more-btn {
+    background: none;
+    border: none;
+    color: #999;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0 5px;
+    line-height: 1;
+  }
+  
+  .more-btn:hover {
+    color: #666;
+  }
+  
+ 
+  .loading, .error-container {
+    padding: 40px;
+    text-align: center;
+    color: #666;
+  }
+  
+  .error-container {
+    color: #d32f2f;
+    background: #ffebee;
+    border-radius: 8px;
+  }
+  
+  @media (max-width: 1200px) {
+    .col-description {
+      min-width: 200px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .pricelist-toolbar {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .search-group {
+      flex-direction: column;
+      min-width: 100%;
+    }
+  
+    .action-buttons-inline {
+      justify-content: stretch;
+    }
+  
+    .action-btn-inline {
+      flex: 1;
+      justify-content: center;
+    }
+  
+    .products-table-main {
+      font-size: 0.8rem;
+    }
+  
+    .col-description {
+      min-width: 150px;
+    }
+  }

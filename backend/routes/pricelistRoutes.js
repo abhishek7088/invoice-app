@@ -3,10 +3,10 @@ const router = express.Router();
 const pool = require('../config/database');
 const { protect } = require('../middleware/authMiddleware');
 
-// All pricelist routes are protected
+
 router.use(protect);
 
-// Get all products
+
 router.get('/products', async (req, res) => {
   try {
     const result = await pool.query(
@@ -27,7 +27,6 @@ router.get('/products', async (req, res) => {
   }
 });
 
-// Get single product
 router.get('/products/:id', async (req, res) => {
   try {
     const { id } = req.params;
@@ -57,7 +56,6 @@ router.get('/products/:id', async (req, res) => {
   }
 });
 
-// Create new product
 router.post('/products', async (req, res) => {
   try {
     const {
@@ -91,7 +89,7 @@ router.post('/products', async (req, res) => {
   }
 });
 
-// Update product (full update)
+
 router.put('/products/:id', async (req, res) => {
   try {
     const { id } = req.params;
@@ -140,7 +138,6 @@ router.put('/products/:id', async (req, res) => {
   }
 });
 
-// Partial update product (only update provided fields)
 router.patch('/products/:id', async (req, res) => {
   try {
     const { id } = req.params;
@@ -208,7 +205,7 @@ router.patch('/products/:id', async (req, res) => {
   }
 });
 
-// Bulk update products
+
 router.put('/products', async (req, res) => {
   try {
     const { products } = req.body;
@@ -275,7 +272,7 @@ router.put('/products', async (req, res) => {
   }
 });
 
-// Delete product
+
 router.delete('/products/:id', async (req, res) => {
   try {
     const { id } = req.params;

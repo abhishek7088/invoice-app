@@ -1,4 +1,4 @@
--- Users table
+
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     email VARCHAR(255) UNIQUE NOT NULL,
@@ -6,7 +6,6 @@ CREATE TABLE users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Texts table
 CREATE TABLE texts (
     id SERIAL PRIMARY KEY,
     key VARCHAR(255) NOT NULL,
@@ -16,7 +15,6 @@ CREATE TABLE texts (
     UNIQUE(key, language)
 );
 
--- Products table
 CREATE TABLE products (
     id SERIAL PRIMARY KEY,
     article_no VARCHAR(50) NOT NULL,
@@ -49,7 +47,7 @@ INSERT INTO texts (key, language, value, page) VALUES
 ('forgot_password', 'en', 'Forgot password?', 'login'),
 ('forgot_password', 'sv', 'Glömt lösenord?', 'login');
 
--- Insert sample products
+-- sample Data
 INSERT INTO products (article_no, product_service, in_price, price, unit, in_stock, description)
 VALUES 
     ('1234567890', 'This is a test product with fifty characters this!', 900500, 1500800, 'kilometers/hour', 2500600, 'This is the description with fifty characters this'),
