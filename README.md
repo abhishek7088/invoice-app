@@ -228,20 +228,20 @@ Password: password123
 ## 🎨 Screenshots
 
 ### Desktop View
-![Desktop View](./Screenshots\DesktopView.png)
-![Desktop View](Screenshots\ToggleView.png)
+![Desktop View](Screenshots/DesktopView.png)
+![Desktop View](Screenshots/ToggleView.png)
 
 ### Tablet View
-![Tablet View](./Screenshots\TabView.png)
+![Tablet View](Screenshots/TabView.png)
 
 ### Mobile View (Portrait)
-![Mobile Portrait](./Screenshots\MobileView.png)
+![Mobile Portrait](Screenshots/MobileView.png)
 
 ### Mobile View (Landscape)
-![Mobile Landscape](./Screenshots\MobileLandscapeView.png)
+![Mobile Landscape](Screenshots/MobileLandscapeView.png)
 
 ### LogIn View
-![LogIn View](./screenshot/login-page.png)
+![LogIn View](Screenshots/login-page.png)
 
 ## 📱 Responsive Design
 
