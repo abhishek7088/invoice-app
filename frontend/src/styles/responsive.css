@@ -1,1 +1,237 @@
-    
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+ 
+  * {
+    box-sizing: border-box;
+  }
+ 
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+ 
+  
+  @media (max-width: 768px) {
+    table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+ 
+  .table-container::-webkit-scrollbar {
+    height: 8px;
+  }
+ 
+  .table-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+ 
+  .table-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+ 
+  .table-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+ 
+  /* Touch-friendly minimum sizes */
+  @media (max-width: 768px) {
+    button, a, .clickable {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+ 
+  button {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  /* ===== SEARCH BOX MOBILE FIXES ===== */
+
+  /* Phone Portrait (max 480px) - Search Bar Fix */
+  @media (max-width: 480px) and (orientation: portrait) {
+    .search-container,
+    .search-box,
+    .search-section {
+      width: 100%;
+      max-width: 100%;
+      padding: 15px 12px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      overflow: hidden;
+    }
+
+    .search-wrapper {
+      width: 100%;
+      max-width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+    }
+
+    .search-input,
+    input[placeholder*="Search"] {
+      width: 100%;
+      max-width: 100%;
+      padding: 12px 40px 12px 16px !important;
+      border-radius: 20px;
+      border: 1px solid #ddd;
+      font-size: 14px;
+      box-sizing: border-box !important;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .search-icon,
+    [class*="search-icon"],
+    input[placeholder*="Search"] ~ svg,
+    input[placeholder*="Search"] ~ i {
+      position: absolute;
+      right: 12px;
+      width: 20px;
+      height: 20px;
+      pointer-events: none;
+    }
+
+    .button-group,
+    .action-buttons {
+      width: 100%;
+      max-width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      padding: 0 12px;
+      box-sizing: border-box;
+    }
+
+    .btn, button {
+      min-width: 120px;
+      padding: 10px 16px;
+      border-radius: 20px;
+      border: none;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .table-wrapper,
+    .product-list {
+      width: 100%;
+      max-width: 100%;
+      padding: 12px;
+      box-sizing: border-box;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .table-row,
+    .product-row {
+      display: flex;
+      width: 100%;
+      gap: 10px;
+      padding: 12px;
+      border-radius: 12px;
+      background: #f9f9f9;
+      margin-bottom: 10px;
+      align-items: center;
+      box-sizing: border-box;
+    }
+
+    .table-cell,
+    .product-name {
+      flex: 1;
+      min-width: 100px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 12px;
+    }
+
+    .product-name {
+      flex: 1.5;
+      min-width: 120px;
+    }
+
+    .price {
+      min-width: 70px;
+      text-align: right;
+      font-weight: 600;
+    }
+
+    .row-indicator {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+
+    .menu-icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+  }
+
+  
+  @media (max-width: 767px) and (orientation: landscape) {
+    .search-container,
+    .search-box {
+      width: 100%;
+      max-width: 100%;
+      padding: 12px;
+      box-sizing: border-box;
+    }
+
+    .search-input,
+    input[placeholder*="Search"] {
+      width: 100%;
+      max-width: 100%;
+      padding: 10px 35px 10px 14px !important;
+      font-size: 13px;
+      box-sizing: border-box !important;
+    }
+  }
+
+  
+  @media (max-width: 1024px) and (min-width: 769px) {
+    .search-container {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .search-input {
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+
+  
+  .app-content::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .app-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  .app-content::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+
+  .app-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }

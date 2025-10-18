@@ -5,7 +5,7 @@
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   }
   
-
+ 
   .pricelist-toolbar {
     padding: 15px 20px;
     background: #fafafa;
@@ -26,7 +26,7 @@
   
   .search-box-inline {
     position: relative;
-    flex: 0 0 200px; 
+    flex: 0 0 200px;
   }
   
   .search-input-inline {
@@ -100,12 +100,19 @@
   
   .table-container {
     overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    min-width: 0;
+    display: block;
   }
   
   .products-table-main {
-    width: 100%;
+    width: auto;
+    min-width: 100%;
     border-collapse: collapse;
     font-size: 0.9rem;
+    display: table;
   }
   
   .products-table-main thead {
@@ -127,6 +134,7 @@
   .products-table-main td {
     padding: 8px 10px;
     border-bottom: 1px solid #f0f0f0;
+    white-space: nowrap;
   }
   
   .products-table-main tbody tr:hover {
@@ -142,35 +150,47 @@
   
   .col-select {
     width: 40px;
+    min-width: 40px;
     text-align: center;
+    display: table-cell;
   }
   
   .col-article {
     width: 130px;
+    min-width: 130px;
+    display: table-cell;
   }
   
   .col-product {
     min-width: 250px;
+    display: table-cell;
   }
   
   .col-number {
     width: 100px;
+    min-width: 100px;
+    display: table-cell;
   }
   
   .col-unit {
     width: 140px;
+    min-width: 140px;
+    display: table-cell;
   }
   
   .col-description {
     min-width: 300px;
+    display: table-cell;
   }
   
   .col-actions {
     width: 50px;
+    min-width: 50px;
     text-align: center;
+    display: table-cell;
   }
   
-  
+  /* Cell Inputs */
   .cell-input {
     width: 100%;
     padding: 6px 8px;
@@ -197,14 +217,12 @@
     text-align: right;
   }
   
- 
   .row-arrow {
     color: #2196f3;
     font-size: 1.2rem;
     font-weight: bold;
   }
   
- 
   .more-btn {
     background: none;
     border: none;
@@ -219,7 +237,6 @@
     color: #666;
   }
   
- 
   .loading, .error-container {
     padding: 40px;
     text-align: center;
@@ -232,37 +249,411 @@
     border-radius: 8px;
   }
   
-  @media (max-width: 1200px) {
+  
+  .table-container::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .table-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  .table-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+
+  .table-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
+ 
+   @media (max-width: 1024px) and (min-width: 769px) {
+    .pricelist-toolbar {
+      padding: 15px 20px;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    .search-group {
+      flex-direction: row;
+      gap: 10px;
+    }
+  
+    .search-box-inline {
+      flex: 0 0 180px;
+    }
+  
+    .action-buttons-inline {
+      flex-direction: row;
+      gap: 10px;
+    }
+  
+    .action-btn-inline {
+      padding: 8px 14px;
+      font-size: 0.85rem;
+    }
+  
+    .col-article,
+    .col-product,
+    .col-number,
+    .col-unit,
     .col-description {
-      min-width: 200px;
+      display: table-cell;
+    }
+
+    .table-container {
+      overflow-x: auto;
+    }
+
+    .products-table-main {
+      width: auto;
+      min-width: 100%;
     }
   }
   
-  @media (max-width: 768px) {
+  
+  @media (max-width: 768px) and (min-width: 481px) {
     .pricelist-toolbar {
+      padding: 15px 20px;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 15px;
+    }
+  
+    .search-group {
+      flex-direction: row;
+      gap: 10px;
+      flex: 1;
+    }
+  
+    .search-box-inline {
+      flex: 1 1 auto;
+      max-width: 200px;
+    }
+  
+    .action-buttons-inline {
+      flex-direction: row;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+  
+    .action-btn-inline {
+      padding: 8px 12px;
+      font-size: 0.85rem;
+      gap: 6px;
+    }
+  
+    .btn-icon {
+      font-size: 1rem;
+    }
+  
+    .products-table-main {
+      font-size: 0.85rem;
+    }
+  
+    .products-table-main th,
+    .products-table-main td {
+      padding: 8px 8px;
+    }
+  
+    .col-product {
+      min-width: 200px;
+    }
+  
+    .col-description {
+      min-width: 200px;
+    }
+
+    .table-container {
+      overflow-x: auto;
+    }
+
+    .products-table-main {
+      width: auto;
+      min-width: 100%;
+    }
+  }
+  
+ 
+  @media (max-width: 767px) and (orientation: landscape) {
+    .pricelist-page {
+      border-radius: 0;
+    }
+  
+    .pricelist-toolbar {
+      padding: 12px 15px;
       flex-direction: column;
       align-items: stretch;
+      gap: 12px;
     }
   
     .search-group {
       flex-direction: column;
-      min-width: 100%;
+      width: 100%;
+      gap: 12px;
+      max-width: 100%;
+      padding: 0 12px;
+      box-sizing: border-box;
+    }
+  
+    .search-box-inline {
+      flex: 1 1 auto;
+      width: 100%;
+      max-width: 100%;
+    }
+  
+    .search-input-inline {
+      padding: 12px 40px 12px 15px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+  
+    .search-icon {
+      font-size: 1.2rem;
+      right: 15px;
     }
   
     .action-buttons-inline {
-      justify-content: stretch;
+      flex-direction: row;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 0 12px;
+      box-sizing: border-box;
     }
   
     .action-btn-inline {
-      flex: 1;
-      justify-content: center;
+      flex: 0 1 auto;
+      padding: 12px 16px;
+      font-size: 0.9rem;
+    }
+  
+    .table-container {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      display: block;
+    }
+
+    .products-table-main {
+      width: auto;
+      min-width: 100%;
+      display: table;
+    }
+
+    .col-select,
+    .col-article,
+    .col-product,
+    .col-number,
+    .col-unit,
+    .col-description,
+    .col-actions {
+      display: table-cell !important;
+      white-space: nowrap;
+    }
+  
+    .col-product {
+      min-width: 250px;
     }
   
     .products-table-main {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
     }
   
-    .col-description {
-      min-width: 150px;
+    .products-table-main th,
+    .products-table-main td {
+      padding: 10px 12px;
+      white-space: nowrap;
     }
   }
+  
+
+  @media (max-width: 480px) and (orientation: portrait) {
+    .pricelist-page {
+      border-radius: 0;
+    }
+  
+    .pricelist-toolbar {
+      padding: 15px;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 15px;
+    }
+  
+    .search-group {
+      flex-direction: column;
+      width: 100%;
+      gap: 12px;
+      max-width: 100%;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  
+    .search-box-inline {
+      flex: 1 1 auto;
+      width: 100%;
+      max-width: 100%;
+      position: relative;
+    }
+  
+    .search-input-inline {
+      width: 100%;
+      padding: 12px 40px 12px 15px;
+      font-size: 1rem;
+      border-radius: 25px;
+      box-sizing: border-box;
+    }
+  
+    .search-icon {
+      font-size: 1.2rem;
+      right: 15px;
+    }
+  
+    .action-buttons-inline {
+      flex-direction: row;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+  
+    .action-btn-inline {
+      flex: 0 1 auto;
+      padding: 12px 20px;
+      font-size: 0.9rem;
+      border-radius: 25px;
+    }
+  
+    .btn-icon {
+      font-size: 1.1rem;
+    }
+  
+    .table-container {
+      overflow-x: auto;
+      overflow-y: visible;
+      -webkit-overflow-scrolling: touch;
+      width: 100%;
+      display: block;
+    }
+
+    .products-table-main {
+      width: auto;
+      min-width: 100%;
+      display: table;
+    }
+
+    .col-select,
+    .col-article,
+    .col-product,
+    .col-number,
+    .col-unit,
+    .col-description,
+    .col-actions {
+      display: table-cell !important;
+      white-space: nowrap;
+    }
+
+    .col-select {
+      width: 30px;
+      min-width: 30px;
+    }
+
+    .col-article {
+      min-width: 130px;
+    }
+
+    .col-product {
+      min-width: 250px;
+    }
+
+    .col-number {
+      min-width: 100px;
+    }
+
+    .col-unit {
+      min-width: 140px;
+    }
+
+    .col-description {
+      min-width: 300px;
+    }
+
+    .col-actions {
+      min-width: 50px;
+    }
+  
+    .products-table-main {
+      font-size: 0.9rem;
+    }
+  
+    .products-table-main th,
+    .products-table-main td {
+      padding: 12px 10px;
+      white-space: nowrap;
+    }
+  
+    .cell-input {
+      padding: 8px 10px;
+      font-size: 0.95rem;
+      border-radius: 20px;
+      border: 1px solid #e0e0e0;
+      background: white;
+    }
+  
+    .cell-input:focus {
+      border-color: #00bcd4;
+    }
+  
+    .more-btn {
+      font-size: 1.3rem;
+    }
+  }
+  
+ 
+  @media (max-width: 360px) {
+    .pricelist-toolbar {
+      padding: 12px;
+    }
+  
+    .search-input-inline {
+      padding: 10px 35px 10px 12px;
+      font-size: 0.9rem;
+    }
+  
+    .action-btn-inline {
+      padding: 10px 16px;
+      font-size: 0.85rem;
+    }
+  
+    .products-table-main {
+      font-size: 0.85rem;
+    }
+  
+    .products-table-main th,
+    .products-table-main td {
+      padding: 10px 8px;
+    }
+  
+    .cell-input {
+      padding: 6px 8px;
+      font-size: 0.85rem;
+    }
+
+    .col-select,
+    .col-article,
+    .col-product,
+    .col-number,
+    .col-unit,
+    .col-description,
+    .col-actions {
+      display: table-cell !important;
+    }
+
+    .table-container {
+      overflow-x: auto;
+    }
+
+    .products-table-main {
+      width: auto;
+      min-width: 100%;
+    }
+  } 
