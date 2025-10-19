@@ -1,9 +1,9 @@
-// API Configuration
+
 export const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
-console.log('🌐 API URL:', API_URL); // Debug log
+console.log(' API URL:', API_URL);
 
-// Images
+
 export const IMAGES = {
   background: 'https://storage.123fakturera.se/public/wallpapers/sverige43.jpg',
   logo: 'https://storage.123fakturera.se/public/icons/diamond.png',
